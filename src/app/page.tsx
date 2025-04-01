@@ -1,16 +1,24 @@
-"use client";
-import { Feature, Head } from "@/components";
-import { useState } from "react";
-
-export default function Home() {
-  const [movies, setMovies] = useState();
-  const apiKey = "d67d8bebd0f4ff345f6505c99e9d0289";
-  const popular =
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+import { Input } from "@/components/ui/input";
+import { FaMoon } from "react-icons/fa";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { BsThreeDots } from "react-icons/bs";
+import Image from "next/image";
+import { Feature, Header, Popular, Toprated, Upcoming } from "@/components";
+export default function Page() {
   return (
-    <div>
-      <Head />
-      <Feature />
+    <div className="flex flex-col">
+      <div>
+        <Header />
+        <Feature />
+      </div>
+      <Upcoming />
+      <Popular />
+      <Toprated />
     </div>
   );
 }
