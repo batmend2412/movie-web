@@ -1,14 +1,24 @@
-import { Input } from "@/components/ui/input";
-import { FaMoon } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
+import { Search } from "lucide-react";
+import { MovieGenreBox } from "./MovieGenreBox";
+
 export const Header = () => {
   return (
-    <div className="w-screen h-[59px] flex justify-between items-center px-4">
-      <div className="flex items-center gap-2">
-        <img src="./film.svg" alt="" />
-        Movie Z
+    <div className="flex w-full items-center p-4 justify-around">
+      <img src="/Logo.svg" alt="logo"></img>
+      <div className="w-fit flex gap-3">
+        <div className="w-[97px] flex gap-2 rounded-md border-1 border-[#E4E4E7] shadow-sm p-3">
+          <ChevronDown />
+          <button>
+            <MovieGenreBox />
+          </button>
+        </div>
+        <div className="w-[379px] flex gap-[10px] rounded-md border-1 border-[#E4E4E7] shadow-sm p-3">
+          <Search />
+          <input className="outline-none"></input>
+        </div>
       </div>
-      <Input className="w-[380px]" placeholder="Search ..." />
-      <FaMoon className="border-gray-950 border-2 w-8 h-8 rounded-[10px]" />
+      <img src="/moon.svg" alt="darkMode"></img>
     </div>
   );
 };

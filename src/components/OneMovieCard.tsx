@@ -8,16 +8,13 @@ export const OneMovieCard = ({
 }: any) => {
   return (
     <div>
-      <section>
-        <p>{textView}</p>
-        <Button variant="outline">Button</Button>
-      </section>
-      <div className="w-[230px] h-[500px] bg-gray-600">
+      <div className="w-[300px] h-[530px] bg-gray-100 rounded-lg p-2">
         <Image
           src={`https://image.tmdb.org/t/p/w300/${movieImage}`}
           alt="zuragb"
           width={300}
-          height={500}
+          height={400}
+          className="rounded-lg"
         />
         <p className="flex">
           <img src="./star.svg" alt="" /> {rate}/10

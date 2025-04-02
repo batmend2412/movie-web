@@ -1,21 +1,21 @@
 import { Button } from "@/components/ui/button";
 
 import Image from "next/image";
-import { Feature, Header, Popular, Toprated, Upcoming } from "@/components";
+import { Header, TopRatedMovie, Upcoming } from "@/components";
+import { NowPlayingMovieSlidePage } from "@/components/NowPlayingSlide";
+import { PopularMovie } from "@/components/Popular";
 export default function Page() {
   return (
-    <div className="flex flex-col">
-      <p className="text-pink-400 text-2xl flex justify-center items-center">
-        uuchlaarai bagshaa bas angiinhandaa vzvvleh ym danch alg hha ghde bvi
-        hiine hha
-      </p>
+    <div className="flex flex-col ">
       <div>
         <Header />
-        <Feature />
+        <NowPlayingMovieSlidePage />
       </div>
-      <Upcoming />
-      <Popular />
-      <Toprated />
+      <div className="flex flex-col gap-4">
+        <Upcoming />
+        <PopularMovie />
+        <TopRatedMovie />
+      </div>
     </div>
   );
 }
