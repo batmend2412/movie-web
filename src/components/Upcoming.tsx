@@ -5,7 +5,9 @@ import { OneMovieCard } from "./OneMovieCard";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "@/lib/utils";
 type MovieDataTypes = {
+  id: number;
   title: string;
+  textview: string;
   poster_path: string;
   vote_average: number;
 };
@@ -33,8 +35,10 @@ export const Upcoming = () => {
         {firsttenmovies.map((element, index) => {
           return (
             <OneMovieCard
-              MovieName={element.title}
+              id={element.id}
+              key={index}
               textView="Upcoming"
+              MovieName={element.title}
               rate={(Math.round(element.vote_average * 100) / 100).toFixed(1)}
               movieImage={element.poster_path}
             />

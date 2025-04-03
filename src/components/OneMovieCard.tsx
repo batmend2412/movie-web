@@ -1,18 +1,29 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+type OneMovieCardProps = {
+  id: number;
+  MovieName: string;
+  rate: string;
+  movieImage: string;
+  textView: string;
+};
+
 export const OneMovieCard = ({
-  textView,
+  id,
   MovieName,
+  textView,
   rate,
   movieImage,
-}: any) => {
+}: OneMovieCardProps) => {
   return (
-    <div>
-      <div className="w-[300px] h-[530px] bg-gray-100 rounded-lg p-2">
+    <Link href={`/detail/${id}`}>
+      <div className="w-[260px] h-[500px] bg-gray-100 rounded-lg p-1 ">
         <Image
           src={`https://image.tmdb.org/t/p/w300/${movieImage}`}
           alt="zuragb"
-          width={300}
+          width={250}
           height={400}
           className="rounded-lg"
         />
@@ -21,6 +32,6 @@ export const OneMovieCard = ({
         </p>
         <p>{MovieName}</p>
       </div>
-    </div>
+    </Link>
   );
 };

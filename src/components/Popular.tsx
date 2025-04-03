@@ -7,6 +7,7 @@ import axios from "axios";
 import { axiosInstance } from "../../next.config";
 type MovieDataTypes = {
   title: string;
+  id: number;
   poster_path: string;
   vote_average: number;
 };
@@ -35,6 +36,8 @@ export const PopularMovie = () => {
         {firsttenmovies.map((element, index) => {
           return (
             <OneMovieCard
+              key={index}
+              id={element.id}
               MovieName={element.title}
               textView="Upcoming"
               rate={(Math.round(element.vote_average * 100) / 100).toFixed(1)}

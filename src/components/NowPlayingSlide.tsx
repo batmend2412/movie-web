@@ -42,14 +42,14 @@ export const NowPlayingMovieSlidePage = () => {
         <CarouselContent className="w-screen h-[700px]">
           {nowPlayingSlideData.slice(0, 5).map((element, index) => {
             return (
-              <CarouselItem>
+              <CarouselItem key={index}>
                 <img
-                  src={`https://image.tmdb.org/t/p/original${element.poster_path}`}
+                  className=" w-screen"
+                  src={`https://image.tmdb.org/t/p/original${element.backdrop_path}`}
                 ></img>
               </CarouselItem>
             );
           })}
-          <Ellipsis className="absolute" />;
         </CarouselContent>
         <CarouselPrevious className="flex absolute left-10 size-10" />
         <CarouselNext className="flex absolute right-10 size-10" />

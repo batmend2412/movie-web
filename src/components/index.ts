@@ -5,3 +5,6 @@ export * from "./NowPlayingSlide";
 export * from "./Popular";
 export * from "./OneMovieCard";
 export * from "./MovieGenreBox";
+export * from "./Footer";
+export * from "./OneMovieDetialsHeader";
+export * from "./MovieDescription";

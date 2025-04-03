@@ -5,6 +5,7 @@ import { OneMovieCard } from "./OneMovieCard";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "@/lib/utils";
 type MovieDataTypes = {
+  id: number;
   title: string;
   poster_path: string;
   vote_average: number;
@@ -33,6 +34,7 @@ export const TopRatedMovie = () => {
         {firstTenMovies.map((element, index) => {
           return (
             <OneMovieCard
+              id={element.id}
               key={index}
               MovieName={element.title}
               textView="Upcoming"
