@@ -8,3 +8,4 @@ export * from "./MovieGenreBox";
 export * from "./Footer";
 export * from "./OneMovieDetialsHeader";
 export * from "./MovieDescription";
+export * from "./MoreLikeThis";

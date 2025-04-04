@@ -32,14 +32,13 @@ export const PopularMovie = () => {
         <p>"Popular"</p>
         <Button variant="outline">See more ...</Button>
       </section>
-      <div className="flex gap-8 flex-wrap">
+      <div className="flex gap-9 flex-wrap">
         {firsttenmovies.map((element, index) => {
           return (
             <OneMovieCard
               key={index}
               id={element.id}
-              MovieName={element.title}
-              textView="Upcoming"
+              movieName={element.title}
               rate={(Math.round(element.vote_average * 100) / 100).toFixed(1)}
               movieImage={element.poster_path}
             />

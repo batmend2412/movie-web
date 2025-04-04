@@ -3,11 +3,7 @@
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../../next.config";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 type MovieTypeData = {
-  // id: number;
-  // poster_path: string;
-  // vote_average: number;
   original_title: string;
   release_date: string;
   runtime: number;

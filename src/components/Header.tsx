@@ -4,7 +4,7 @@ import { MovieGenreBox } from "./MovieGenreBox";
 
 export const Header = () => {
   return (
-    <div className="flex w-full items-center p-4 justify-around">
+    <div className="flex w-full items-center p-4 justify-between">
       <img src="/Logo.svg" alt="logo"></img>
       <div className="w-fit flex gap-3">
         <div className="w-[97px] flex gap-2 rounded-md border-1 border-[#E4E4E7] shadow-sm p-3">
@@ -16,7 +16,11 @@ export const Header = () => {
           <input className="outline-none"></input>
         </div>
       </div>
-      <img src="/moon.svg" alt="darkMode"></img>
+      <img
+        className="w-8 h-8 border-2 border-gray-800 rounded-[20%]"
+        src="/moon.svg"
+        alt="darkMode"
+      ></img>
     </div>
   );
 };

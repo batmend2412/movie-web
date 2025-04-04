@@ -26,7 +26,7 @@ export const Upcoming = () => {
   console.log(upcomingMovie, "UPCOMING");
   const firsttenmovies = upcomingMovie.slice(0, 10);
   return (
-    <div className="w-screen flex gap-8 flex-wrap p-7 ">
+    <div className="w-screen flex gap-9 flex-wrap p-7 ">
       <section className="w-screen flex justify-between items-center ">
         <p>"Upcoming"</p>
         <Button variant="outline">See more ...</Button>
@@ -37,8 +37,7 @@ export const Upcoming = () => {
             <OneMovieCard
               id={element.id}
               key={index}
-              textView="Upcoming"
-              MovieName={element.title}
+              movieName={element.title}
               rate={(Math.round(element.vote_average * 100) / 100).toFixed(1)}
               movieImage={element.poster_path}
             />

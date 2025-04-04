@@ -38,8 +38,8 @@ export const NowPlayingMovieSlidePage = () => {
 
   return (
     <div>
-      <Carousel className=" h-[700px]">
-        <CarouselContent className="w-screen h-[700px]">
+      <Carousel className=" h-[1000px]">
+        <CarouselContent className="w-screen h-[900px]">
           {nowPlayingSlideData.slice(0, 5).map((element, index) => {
             return (
               <CarouselItem key={index}>

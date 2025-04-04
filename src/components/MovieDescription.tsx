@@ -1,9 +1,8 @@
 "use client";
-import { Header } from "./Header";
+
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../../next.config";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 type MovieTypeData = {
   overview: string;
@@ -46,6 +45,7 @@ export const MovieDescription = () => {
   const writers = credits?.crew?.filter(
     (el) => el.known_for_department === "Writing"
   );
+  const stars = credits?.cast?.slice(0, 3);
 
   return (
     <div className="flex flex-col gap-5">
@@ -57,17 +57,28 @@ export const MovieDescription = () => {
         <Badge variant="outline">Romance</Badge>
       </div>
       <p className="text-4 font-normal">{movie.overview}</p>
-      <div>
-        <p>Director</p>
+      <div className="flex gap-[53px]">
+        <p className="text-[16px] font-semibold">Director</p>
         {directors?.map((director, index) => {
           return <span key={index}>{director.name}</span>;
         })}
       </div>
-      <div>
-        <p>Writers</p>
-        {writers?.map((writer, index) => {
-          return <span key={index}>{writer.name}</span>;
-        })}
+      <div className="flex gap-[59px]">
+        <p className="text-[16px] font-semibold">Writers</p>
+        <div className="flex gap-4">
+          {writers?.map((writer, index) => {
+            return <span key={index}>{writer.name}</span>;
+          })}
+        </div>
+      </div>
+
+      <div className="flex gap-[75px]">
+        <p className="text-[16px] font-semibold">Stars</p>
+        <div className="flex gap-4">
+          {stars?.map((star, index) => {
+            return <span key={index}>{star.name}</span>;
+          })}
+        </div>
       </div>
     </div>
   );
